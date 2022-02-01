@@ -13,7 +13,7 @@ export default function PostListCard(){
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            <img src="https://avatars.dicebear.com/api/micah/:Rahul.svg?backgroundColor=%4267B2&size=45&mouth=smile"/>
+                            <img src="https://avatars.dicebear.com/api/micah/:Rahul.svg?backgroundColor=%4267B2&size=45&mouth=smile" alt="avatar"/>
                         </Avatar>
                         }
                     action={
@@ -47,7 +47,7 @@ export default function PostListCard(){
                 <CardHeader
                     avatar={
                         <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            <img src="https://avatars.dicebear.com/api/micah/:Deepesh.svg?backgroundColor=%4267B2&size=45&mouth=smile"/>
+                            <img src="https://avatars.dicebear.com/api/micah/:Deepesh.svg?backgroundColor=%4267B2&size=45&mouth=smile" alt="avatar"/>
                         </Avatar>
                         }
                     action={
