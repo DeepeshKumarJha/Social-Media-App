@@ -1,10 +1,13 @@
 import React from 'react';
+import NavBar from './app/NavBar';
+import PostList from './features/posts/PostList';
 
 function App() {
   return (
-    <h1>
-      Hello World
-    </h1>
+    <>
+      <NavBar/>
+      <PostList/>
+    </>
   );
 }
 
