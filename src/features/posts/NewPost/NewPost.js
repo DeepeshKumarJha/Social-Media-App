@@ -4,6 +4,7 @@ import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import TheatersIcon from '@mui/icons-material/Theaters';
+import AddIcon from '@mui/icons-material/Add';
 import { useState } from "react";
 
 
@@ -16,7 +17,6 @@ export default function NewPost(){
         transform: 'translate(-50%, -50%)',
         width: 500,
         bgcolor: 'background.paper',
-        border: '2px solid #000',
         boxShadow: 24,
         p: 1,
     };
@@ -64,32 +64,16 @@ export default function NewPost(){
                         }
                     />
                     <CardContent>
-                        <TextField
-                            variant="outlined"
-                            label="Write your post here."
-                            rows={10}
+                        <Button
                             fullWidth
-                            multiline
-                        />
+                            startIcon={<AddIcon/>}
+                            sx={{height:400}}
+                        >
+                            Add Photo
+                        </Button>
                     </CardContent>
                     <CardActions>
                         <Grid container justifyContent="space-around">
-                            <Grid item>
-                                <Button
-                                    startIcon={
-                                        <AddPhotoAlternateIcon/>
-                                    }    
-                                >
-                                    Add Photo
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button
-                                    startIcon={<TheatersIcon/>}
-                                >
-                                    Add Video
-                                </Button>
-                            </Grid>
                             <Grid item>
                                 <Button variant="contained">Post</Button>   
                             </Grid>
@@ -114,32 +98,16 @@ export default function NewPost(){
                     }
                 />
                 <CardContent>
-                    <TextField
-                        variant="outlined"
-                        label="Write your post here."
-                        rows={10}
+                    <Button
                         fullWidth
-                        multiline
-                    />
+                        startIcon={<AddIcon/>}
+                        sx={{height:400}}
+                    >
+                        Add Video
+                    </Button>
                 </CardContent>
                 <CardActions>
                     <Grid container justifyContent="space-around">
-                        <Grid item>
-                            <Button
-                                startIcon={
-                                    <AddPhotoAlternateIcon/>
-                                }    
-                            >
-                                Add Photo
-                            </Button>
-                        </Grid>
-                        <Grid item>
-                            <Button
-                                startIcon={<TheatersIcon/>}
-                            >
-                                Add Video
-                            </Button>
-                        </Grid>
                         <Grid item>
                             <Button variant="contained">Post</Button>   
                         </Grid>

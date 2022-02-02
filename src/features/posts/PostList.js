@@ -10,7 +10,7 @@ export default function PostList(){
     const postlist = posts.map(
         post => {
             return (
-                <Paper elevation={1} sx={{width:"500px", marginBottom:"1rem"}}>
+                <Paper elevation={1} sx={{width:"500px", marginBottom:"1rem"}} key={post.id}>
                     <Typography variant="h1">
                         {post.title}
                     </Typography>
