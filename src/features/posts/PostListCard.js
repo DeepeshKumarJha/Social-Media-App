@@ -1,9 +1,10 @@
-import { Avatar, Card, CardHeader, CardContent, IconButton, Stack, Typography, CardMedia,CardActions } from "@mui/material";
+import { Avatar, Card, CardHeader, CardContent, IconButton, Stack, Typography, CardMedia,CardActions, Checkbox } from "@mui/material";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import { red } from "@mui/material/colors";
+import { red, pink} from "@mui/material/colors";
 import cardImage from "../../DemoStuff/simple.jpeg"
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 export default function PostListCard(){
     return(
@@ -32,9 +33,10 @@ export default function PostListCard(){
                     </Typography>
                 </CardContent>
                 <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
-                        <FavoriteIcon />
-                    </IconButton>
+                    <Checkbox
+                        icon={<FavoriteBorderIcon/>}
+                        checkedIcon={<FavoriteIcon sx={{color:pink[500]}}/>}    
+                    />
                     <IconButton aria-label="share">
                         <ShareIcon />
                     </IconButton>
@@ -67,14 +69,14 @@ export default function PostListCard(){
                 </CardContent>
                 <CardMedia
                     component="img"
-                    // height="250"
                     image={cardImage}
                     alt="Paella dish"
                 />
                 <CardActions disableSpacing>
-                    <IconButton aria-label="add to favorites">
-                        <FavoriteIcon />
-                    </IconButton>
+                    <Checkbox
+                        icon={<FavoriteBorderIcon/>}
+                        checkedIcon={<FavoriteIcon sx={{color:pink[500]}}/>}    
+                    />
                     <IconButton aria-label="share">
                         <ShareIcon />
                     </IconButton>
