@@ -1,7 +1,9 @@
-import { Avatar, Button, Card, CardActions, CardHeader, Grid, Modal, Paper, Stack, Typography } from "@mui/material";
+import { Avatar, Button, Card, CardActions, CardContent, CardHeader, Grid, Modal, Paper, Stack, TextField, Typography } from "@mui/material";
 import { blue, grey } from "@mui/material/colors";
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import TheatersIcon from '@mui/icons-material/Theaters';
 import { useState } from "react";
 
 
@@ -12,11 +14,11 @@ export default function NewPost(){
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: 500,
         bgcolor: 'background.paper',
         border: '2px solid #000',
         boxShadow: 24,
-        p: 4,
+        p: 1,
     };
 
     const [modal, setModal] = useState(false)
@@ -76,7 +78,45 @@ export default function NewPost(){
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
                 <Card sx={style}>
-                    
+                    <CardHeader
+                        title={
+                            <Typography variant="h5" align="center" sx={{fontWeight:'bold', color:grey[700]}}>
+                                Create Post
+                            </Typography>
+                        }
+                    />
+                    <CardContent>
+                        <TextField
+                            variant="outlined"
+                            label="Write your post here."
+                            rows={10}
+                            fullWidth
+                            multiline
+                        />
+                    </CardContent>
+                    <CardActions>
+                        <Grid container justifyContent="space-around">
+                            <Grid item>
+                                <Button
+                                    startIcon={
+                                        <AddPhotoAlternateIcon/>
+                                    }    
+                                >
+                                    Add Photo
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button
+                                    startIcon={<TheatersIcon/>}
+                                >
+                                    Add Video
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button variant="contained">Post</Button>   
+                            </Grid>
+                        </Grid>
+                    </CardActions>
                 </Card>
             </Modal>
         </>

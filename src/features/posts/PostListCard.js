@@ -21,7 +21,7 @@ export default function PostListCard(){
                             <MoreVertIcon />
                         </IconButton>
                     }
-                    title="Shrimp and Chorizo Paella"
+                    title="Rahul"
                     subheader="September 14, 2016"
                 />
                 <CardContent>
@@ -55,7 +55,7 @@ export default function PostListCard(){
                             <MoreVertIcon />
                         </IconButton>
                     }
-                    title="Shrimp and Chorizo Paella"
+                    title="Shri"
                     subheader="September 14, 2016"
                 />
                 <CardContent>
