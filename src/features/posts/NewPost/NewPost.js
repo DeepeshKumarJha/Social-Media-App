@@ -21,14 +21,133 @@ export default function NewPost(){
         p: 1,
     };
 
-    const [modal, setModal] = useState(false)
+    const [textModal, setTextModal] = useState(false)
+    const [photoModal, setPhotoModal] = useState(false)
+    const [videoModal, setVideoModal] = useState(false)
 
     const handleClick = ()=> {
-        setModal(true)
+        setTextModal(true)
     }
+
+    const handleVideoClick = () => {
+        setVideoModal(true)
+    }
+
+    const handlePhotoClick = () => {
+        setPhotoModal(true)
+    }
+
     const handleClose = ()=> {
-        setModal(false)
+        setTextModal(false)
     }
+
+    const handleVideoClose = () => {
+        setVideoModal(false)
+    }
+
+    const handlePhotoClose = () => {
+        setPhotoModal(false)
+    }
+
+    const AddPhotoButton = (
+        <Modal
+                open={photoModal}
+                onClose={handlePhotoClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description">
+                <Card sx={style}>
+                    <CardHeader
+                        title={
+                            <Typography variant="h5" align="center" sx={{fontWeight:'bold', color:grey[700]}}>
+                                Create Image Post
+                            </Typography>
+                        }
+                    />
+                    <CardContent>
+                        <TextField
+                            variant="outlined"
+                            label="Write your post here."
+                            rows={10}
+                            fullWidth
+                            multiline
+                        />
+                    </CardContent>
+                    <CardActions>
+                        <Grid container justifyContent="space-around">
+                            <Grid item>
+                                <Button
+                                    startIcon={
+                                        <AddPhotoAlternateIcon/>
+                                    }    
+                                >
+                                    Add Photo
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button
+                                    startIcon={<TheatersIcon/>}
+                                >
+                                    Add Video
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button variant="contained">Post</Button>   
+                            </Grid>
+                        </Grid>
+                    </CardActions>
+                </Card>
+            </Modal>
+    )
+
+    const AddVideoButton = (
+        <Modal
+            open={videoModal}
+            onClose={handleVideoClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description">
+            <Card sx={style}>
+                <CardHeader
+                    title={
+                        <Typography variant="h5" align="center" sx={{fontWeight:'bold', color:grey[700]}}>
+                            Create Video Post
+                        </Typography>
+                    }
+                />
+                <CardContent>
+                    <TextField
+                        variant="outlined"
+                        label="Write your post here."
+                        rows={10}
+                        fullWidth
+                        multiline
+                    />
+                </CardContent>
+                <CardActions>
+                    <Grid container justifyContent="space-around">
+                        <Grid item>
+                            <Button
+                                startIcon={
+                                    <AddPhotoAlternateIcon/>
+                                }    
+                            >
+                                Add Photo
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button
+                                startIcon={<TheatersIcon/>}
+                            >
+                                Add Video
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button variant="contained">Post</Button>   
+                        </Grid>
+                    </Grid>
+                </CardActions>
+            </Card>
+        </Modal>
+    )
 
     return (
         <>
@@ -54,6 +173,8 @@ export default function NewPost(){
                         <Grid container justifyContent="space-around">
                             <Grid item xs="auto">
                                 <Button 
+                                    id="addphoto"
+                                    onClick={handlePhotoClick}
                                     startIcon={<PhotoLibraryIcon/>}>
                                     <Typography sx={{color:grey[500]}}>
                                         Photos
@@ -62,8 +183,12 @@ export default function NewPost(){
                             </Grid>
                             <Grid item xs="auto">
                                 <Button 
+                                    onClick={handleVideoClick}
                                     startIcon={<VideoLibraryIcon/>}>
-                                    <Typography sx={{color:grey[500]}}>
+                                    <Typography 
+                                        id="addvideo" 
+                                        sx={{color:grey[500]}}
+                                    >
                                         Videos
                                     </Typography>
                                 </Button>
@@ -73,7 +198,7 @@ export default function NewPost(){
                 </Card>
             </Stack>
             <Modal
-                open={modal}
+                open={textModal}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
@@ -119,6 +244,8 @@ export default function NewPost(){
                     </CardActions>
                 </Card>
             </Modal>
+            {AddPhotoButton}
+            {AddVideoButton}
         </>
     );
 }
